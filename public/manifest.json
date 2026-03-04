@@ -1,0 +1,16 @@
+{
+  "name": "ProFlow Mechanical — HVAC & Plumbing",
+  "short_name": "ProFlow",
+  "description": "Professional HVAC and plumbing services — heating, cooling, and plumbing you can trust.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#1E40AF",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

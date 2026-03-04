@@ -1,0 +1,11 @@
+# Robots.txt for ProFlow Mechanical
+# PLACEHOLDER: Update Sitemap URL with your actual domain
+
+User-agent: *
+Allow: /
+
+Sitemap: https://hvac.widgetfied.com/sitemap.xml
+
+# Disallow admin/private paths if any
+# Disallow: /admin/
+# Disallow: /api/
