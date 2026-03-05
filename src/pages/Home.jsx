@@ -61,6 +61,19 @@ const STATS = [
   { value: '24/7', label: 'Emergency' },
 ]
 
+const NOTABLE_CLIENTS = [
+  'Hilton Hotels',
+  'Marriott Properties',
+  'RE/MAX Realty',
+  'Whole Foods Market',
+  'Planet Fitness',
+  'Chick-fil-A',
+  'Wells Fargo',
+  'CVS Health',
+  'PetSmart',
+  'AutoZone',
+]
+
 const WHY_CHOOSE = [
   {
     icon: Shield,
@@ -163,6 +176,24 @@ export default function Home() {
             <ChevronDown className="w-5 h-5" />
           </div>
         </div>
+
+        <div className="absolute top-0 left-0 right-0 z-20 pt-20">
+          <p className="text-center text-[10px] uppercase tracking-[0.25em] text-white/30 mb-3">
+            Trusted by industry leaders
+          </p>
+          <div className="overflow-hidden">
+            <div className="marquee-track">
+              {[...NOTABLE_CLIENTS, ...NOTABLE_CLIENTS].map((client, i) => (
+                <span
+                  key={i}
+                  className="flex-shrink-0 px-8 md:px-12 text-sm md:text-base font-light tracking-widest text-white/25 uppercase whitespace-nowrap"
+                >
+                  {client}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ==================== WHY CHOOSE SECTION ==================== */}
@@ -203,6 +234,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ==================== SOCIAL PROOF ==================== */}
+      <SocialProof />
 
       {/* ==================== SERVICES SECTION ==================== */}
       <section className="py-32 bg-neutral-50">
@@ -322,9 +356,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ==================== SOCIAL PROOF ==================== */}
-      <SocialProof />
 
       {/* ==================== CTA SECTION ==================== */}
       <section className="py-32 bg-gradient-to-b from-neutral-900 to-black text-white">

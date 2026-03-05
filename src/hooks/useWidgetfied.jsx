@@ -124,7 +124,7 @@ export function EstimateWidget({ className = '', displayMode = 'button', id = 'e
   return (
     <div
       id={id}
-      data-widget="estimates"
+      data-widget="estimate"
       data-tenant={TENANT_ID}
       data-container={id}
       data-display-mode={displayMode}
