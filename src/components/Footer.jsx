@@ -8,6 +8,7 @@ import {
   Instagram,
   Youtube,
   Heart,
+  Shield,
 } from 'lucide-react'
 import { BookingWidget } from '../hooks/useWidgetfied'
 
@@ -278,10 +279,19 @@ export default function Footer() {
             <p className="text-gray-400 text-sm text-center md:text-left">
               &copy; {currentYear} ProFlow Mechanical. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm flex items-center gap-1">
-              Made with <Heart className="w-3 h-3 text-accent-blue" /> by{' '}
-              <span className="text-accent-blue">ProFlow Mechanical</span>
-            </p>
+            <div className="flex items-center gap-4">
+              <Link
+                to="/admin"
+                className="flex items-center gap-1.5 text-gray-600 hover:text-gray-400 transition-colors text-xs"
+              >
+                <Shield className="w-3 h-3" />
+                Admin
+              </Link>
+              <p className="text-gray-400 text-sm flex items-center gap-1">
+                Made with <Heart className="w-3 h-3 text-accent-blue" /> by{' '}
+                <span className="text-accent-blue">ProFlow Mechanical</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
