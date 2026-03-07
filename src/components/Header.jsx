@@ -11,8 +11,8 @@ const NAV_LINKS = [
 ]
 
 const CONTACT = {
-  phone: '(555) 987-6543',
-  phoneHref: 'tel:+15559876543',
+  phone: '(720) 555-0147',
+  phoneHref: 'tel:+17205550147',
   email: 'info@proflowmechanical.com',
 }
 

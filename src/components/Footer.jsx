@@ -16,7 +16,7 @@ const CONTENT = {
     name: 'ProFlow Mechanical',
     tagline: 'HVAC & Plumbing',
     description:
-      'Professional HVAC and plumbing services for residential and commercial clients. Licensed, insured, and ready to keep your systems running smoothly.',
+      'Professional HVAC and plumbing services for residential and commercial clients across the Denver metro area. Colorado-licensed, insured, and ready to keep your systems running smoothly.',
   },
   quickLinks: [
     { name: 'Home', href: '/' },
@@ -42,7 +42,7 @@ const CONTENT = {
     { name: 'YouTube', icon: Youtube, href: 'https://youtube.com', color: 'hover:text-red-500' },
   ],
   contact: {
-    phone: { label: 'Phone', value: '(555) 987-6543', href: 'tel:+15559876543' },
+    phone: { label: 'Phone', value: '(720) 555-0147', href: 'tel:+17205550147' },
     email: {
       label: 'Email',
       value: 'info@proflowmechanical.com',
@@ -54,18 +54,18 @@ const CONTENT = {
     },
     address: {
       label: 'Address',
-      value: '456 Trade Boulevard Suite 100',
+      value: '1847 Wazee St, Suite 200\nDenver, CO 80202',
     },
   },
   map: {
     title: 'Find Us',
     embedUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d-122.4194154846816!3d37.77492927975945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064e2b9c7cd%3A0x79144f7b2ece5b88!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1702830000000!5m2!1sen!2sus',
-    directionsUrl: 'https://maps.google.com',
-    address: '456 Trade Boulevard Suite 100',
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196281.12937236612!2d-104.99519962890626!3d39.764518900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b80aa231f17cf%3A0x118ef4f8278a36d6!2sDenver%2C%20CO!5e0!3m2!1sen!2sus!4v1702830000000!5m2!1sen!2sus',
+    directionsUrl: 'https://maps.google.com/maps?q=1847+Wazee+Street+Suite+200+Denver+CO+80202',
+    address: '1847 Wazee St, Suite 200, Denver, CO 80202',
     serviceCoverage: {
       title: 'Service Area',
-      areas: ['Downtown', 'Midtown', 'Uptown', 'Westside', 'Eastside'],
+      areas: ['Denver Metro', 'Aurora', 'Lakewood', 'Arvada', 'Highlands Ranch'],
     },
   },
 }

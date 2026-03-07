@@ -12,8 +12,8 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     title: 'Phone',
-    details: '(555) 987-6543',
-    link: 'tel:+15559876543',
+    details: '(720) 555-0147',
+    link: 'tel:+17205550147',
   },
   {
     icon: Mail,
@@ -24,8 +24,8 @@ const CONTACT_INFO = [
   {
     icon: MapPin,
     title: 'Location',
-    details: '456 Trade Boulevard\nSuite 100, Your City, ST 00000',
-    link: null,
+    details: '1847 Wazee Street\nSuite 200, Denver, CO 80202',
+    link: 'https://maps.google.com/maps?q=1847+Wazee+Street+Suite+200+Denver+CO+80202',
   },
   {
     icon: Clock,
@@ -169,7 +169,7 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="input-field"
-                        placeholder="(555) 000-0000"
+                        placeholder="(720) 000-0000"
                       />
                     </div>
                     <div>
@@ -343,7 +343,7 @@ export default function Contact() {
         >
           <div className="h-[400px] bg-neutral-900 relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d-122.4194154846816!3d37.77492927975945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064e2b9c7cd%3A0x79144f7b2ece5b88!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1702830000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196281.12937236612!2d-104.99519962890626!3d39.764518900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b80aa231f17cf%3A0x118ef4f8278a36d6!2sDenver%2C%20CO!5e0!3m2!1sen!2sus!4v1702830000000!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -357,10 +357,10 @@ export default function Contact() {
               <div className="container-custom flex items-center justify-between">
                 <div className="text-white">
                   <h3 className="text-xl font-display font-light mb-1">Visit Our Shop</h3>
-                  <p className="text-neutral-300 text-sm font-light">456 Trade Boulevard, Suite 100, Your City</p>
+                  <p className="text-neutral-300 text-sm font-light">1847 Wazee Street, Suite 200, Denver, CO 80202</p>
                 </div>
                 <a
-                  href="https://maps.google.com"
+                  href="https://maps.google.com/maps?q=1847+Wazee+Street+Suite+200+Denver+CO+80202"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hidden sm:inline-flex items-center gap-2 text-accent-orange text-sm uppercase tracking-wider hover:text-white transition-colors"
@@ -387,10 +387,10 @@ export default function Contact() {
             Fast, reliable HVAC and plumbing service from a team you can trust.
           </p>
           <a
-            href="tel:+15559876543"
+            href="tel:+17205550147"
             className="inline-flex items-center gap-3 text-accent-orange font-medium tracking-wider uppercase text-sm hover:text-white transition-colors"
           >
-            Call Direct: (555) 987-6543
+            Call Direct: (720) 555-0147
           </a>
         </div>
       </section>

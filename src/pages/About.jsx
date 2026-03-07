@@ -8,7 +8,7 @@ const CREDENTIALS = [
   {
     icon: Award,
     title: 'Licensed Contractors',
-    description: 'State-licensed HVAC and plumbing contractors',
+    description: 'Colorado-licensed HVAC and plumbing contractors',
   },
   {
     icon: Shield,
@@ -18,7 +18,7 @@ const CREDENTIALS = [
   {
     icon: Heart,
     title: '15+ Years Experience',
-    description: 'Over 15 years serving the local community',
+    description: 'Over 15 years serving the Denver metro area',
   },
   {
     icon: BookOpen,
@@ -47,12 +47,12 @@ const VALUES = [
 ]
 
 const TIMELINE = [
-  { year: '2009', event: 'Founded ProFlow Mechanical as a one-person operation' },
-  { year: '2012', event: 'Expanded to a team of 5 technicians' },
-  { year: '2015', event: 'Added full plumbing services' },
-  { year: '2018', event: 'Opened dedicated service center' },
-  { year: '2021', event: 'Fleet expanded to 12 service vehicles' },
-  { year: '2024', event: 'Surpassed 5,000 completed jobs' },
+  { year: '2009', event: 'Founded ProFlow Mechanical in Denver as a one-person operation' },
+  { year: '2012', event: 'Expanded to a team of 5 technicians serving the Denver metro' },
+  { year: '2015', event: 'Added full plumbing services across the Front Range' },
+  { year: '2018', event: 'Opened dedicated service center in LoDo, Denver' },
+  { year: '2021', event: 'Fleet expanded to 12 service vehicles covering Denver to Castle Rock' },
+  { year: '2024', event: 'Surpassed 5,000 completed jobs across Colorado' },
 ]
 
 export default function About() {
@@ -109,8 +109,8 @@ export default function About() {
               <div className="relative bg-gradient-to-br from-neutral-100 to-neutral-200 aspect-[4/5] flex items-center justify-center">
                 <div className="text-center p-8">
                   <Users className="w-16 h-16 text-accent-blue/30 mx-auto mb-4" />
-                  <p className="text-neutral-500 text-sm uppercase tracking-wider">Team Photo</p>
-                  <p className="text-neutral-400 text-xs mt-2">Replace with your photo</p>
+                  <p className="text-neutral-500 text-sm uppercase tracking-wider">Our Denver Team</p>
+                  <p className="text-neutral-400 text-xs mt-2">ProFlow Mechanical — Est. 2009</p>
                 </div>
               </div>
             </div>
@@ -123,21 +123,22 @@ export default function About() {
               <div className="h-px w-24 bg-accent-blue my-8" />
               <div className="space-y-6 text-neutral-600 font-light leading-relaxed">
                 <p>
-                  ProFlow Mechanical was founded on a simple belief: homeowners and businesses deserve
+                  ProFlow Mechanical was founded on a simple belief: Denver homeowners and businesses deserve
                   reliable, honest HVAC and plumbing service from people they can trust. What started as
-                  a one-person operation has grown into a full-service team, but our founding values
-                  remain unchanged.
+                  a one-person operation has grown into a full-service team covering the entire Front Range,
+                  but our founding values remain unchanged.
                 </p>
                 <p>
-                  From our earliest days servicing local homes to our current fleet of technicians and
-                  dedicated service center, we have always prioritized quality over quantity. Every
-                  repair, every installation, and every maintenance call is an opportunity to build
-                  lasting relationships with our community.
+                  From our earliest days servicing homes in Capitol Hill and Wash Park to our current fleet
+                  of technicians and dedicated service center in LoDo, we have always prioritized quality
+                  over quantity. Every repair, every installation, and every maintenance call is an
+                  opportunity to build lasting relationships with our Colorado community.
                 </p>
                 <p>
-                  We are proud to call this community home. Our commitment extends beyond your HVAC
+                  We are proud to call Denver home. Our commitment extends beyond your HVAC
                   and plumbing systems — we invest in local partnerships, support neighborhood
-                  initiatives, and treat every customer like a neighbor. That is the ProFlow difference.
+                  initiatives from Aurora to Arvada, and treat every customer like a neighbor.
+                  That is the ProFlow difference.
                 </p>
               </div>
             </div>
@@ -259,10 +260,10 @@ export default function About() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-start">
             <BookingWidget id="about-cta-booking-widget" />
             <a
-              href="tel:+15559876543"
+              href="tel:+17205550147"
               className="inline-flex items-center justify-center gap-3 text-accent-orange font-medium tracking-wider uppercase text-sm hover:text-white transition-colors"
             >
-              Call: (555) 987-6543
+              Call: (720) 555-0147
             </a>
           </div>
         </div>

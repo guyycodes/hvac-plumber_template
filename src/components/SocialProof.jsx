@@ -7,21 +7,21 @@ const FALLBACK_REVIEWS = [
   {
     author: 'Mike T.',
     rating: 5,
-    text: 'Had a pipe burst at 2am – ProFlow came out within an hour and saved the day. Professional, fast, and fair pricing. Couldn\'t ask for better emergency plumbing service.',
+    text: 'Had a pipe burst at 2am during that cold snap in January – ProFlow came out within an hour and saved the day. Best emergency plumber in Denver, hands down. Professional, fast, and fair pricing.',
     time: '2 weeks ago',
     profilePhoto: null,
   },
   {
     author: 'Jennifer L.',
     rating: 5,
-    text: 'Our AC died in the middle of summer. They had us up and running same day. The technician was thorough and explained everything. Highly recommend!',
+    text: 'Our AC died during the July heat wave. They had us up and running same day — even on a Saturday. The technician was thorough and explained everything. Best HVAC company in the Denver metro area!',
     time: '1 month ago',
     profilePhoto: null,
   },
   {
     author: 'David R.',
     rating: 5,
-    text: 'Excellent emergency plumbing service. The technician was knowledgeable and fixed our water heater issue quickly. Will definitely call again for any HVAC or plumbing needs.',
+    text: 'Furnace went out right before a snowstorm — ProFlow had a tech at our Lakewood home within two hours. Knowledgeable, honest, and fixed it fast. Will definitely call again for any HVAC or plumbing needs.',
     time: '3 weeks ago',
     profilePhoto: null,
   },
@@ -29,7 +29,7 @@ const FALLBACK_REVIEWS = [
 
 const SKELETON_COUNT = 3
 
-const GOOGLE_BUSINESS_URL = 'https://www.google.com/maps/place/YOUR_BUSINESS'
+const GOOGLE_BUSINESS_URL = 'https://www.google.com/maps/place/Denver,+CO'
 
 const GoogleLogo = () => (
   <svg className="w-10 h-10" viewBox="0 0 48 48">

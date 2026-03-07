@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import {
   Snowflake, Flame, Wrench, Droplets, Filter, AlertTriangle,
   Shield, Clock, Award, DollarSign,
-  ArrowRight, Star, Phone, ChevronDown, Heart, Users
+  ArrowRight, Star, Phone, ChevronDown, Heart, Users,
+  Zap, CheckCircle
 } from 'lucide-react'
 import { useIntersectionObserver, useStaggeredIntersection } from '../hooks/useIntersectionObserver'
 import { BookingWidget, EstimateWidget, JobPortalWidget } from '../hooks/useWidgetfied'
@@ -143,8 +144,8 @@ export default function Home() {
               Your Comfort, Our Priority
             </p>
             <p className="text-base md:text-lg text-white/50 font-light leading-relaxed max-w-2xl mx-auto mb-10">
-              Trusted heating, cooling, and plumbing solutions for homes and businesses.
-              Reliable service from licensed professionals who stand behind every job.
+              Denver's trusted heating, cooling, and plumbing solutions for homes and businesses.
+              Reliable service from Colorado-licensed professionals who stand behind every job.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-start mb-14">
@@ -177,36 +178,55 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute top-0 left-0 right-0 z-20 pt-20">
-          <p className="text-center text-[10px] uppercase tracking-[0.25em] text-white/30 mb-3">
-            Trusted by industry leaders
-          </p>
-          <div className="overflow-hidden">
-            <div className="marquee-track">
-              {[...NOTABLE_CLIENTS, ...NOTABLE_CLIENTS].map((client, i) => (
-                <span
-                  key={i}
-                  className="flex-shrink-0 px-8 md:px-12 text-sm md:text-base font-light tracking-widest text-white/25 uppercase whitespace-nowrap"
-                >
-                  {client}
-                </span>
-              ))}
+      </section>
+
+      {/* ==================== MARQUEE (scrolls with page) ==================== */}
+      <div className="bg-black border-b border-white/5 py-4">
+        <p className="text-center text-[10px] uppercase tracking-[0.25em] text-white/30 mb-3">
+          Trusted by industry leaders
+        </p>
+        <div className="overflow-hidden">
+          <div className="marquee-track">
+            {[...NOTABLE_CLIENTS, ...NOTABLE_CLIENTS].map((client, i) => (
+              <span
+                key={i}
+                className="flex-shrink-0 px-8 md:px-12 text-sm md:text-base font-light tracking-widest text-white/25 uppercase whitespace-nowrap"
+              >
+                {client}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ==================== PROMO BANNER ==================== */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-accent-orange to-orange-600">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)' }} />
+        </div>
+        <div className="relative container-custom py-5">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white text-center">
+            <div className="flex items-center gap-2">
+              <Zap className="w-5 h-5" />
+              <span className="font-display font-semibold text-lg tracking-wide">Spring Special</span>
             </div>
+            <span className="font-light text-white/90">$50 Off Any Service Over $200 — Book by March 31st</span>
+            <BookingWidget id="promo-booking-widget" />
           </div>
         </div>
       </section>
 
       {/* ==================== WHY CHOOSE SECTION ==================== */}
-      <section className="py-32 bg-white">
+      <section className="py-24 bg-white">
         <div className="container-custom">
           <div
             ref={whyObserver.ref}
-            className={`text-center mb-20 animate-fade-up ${whyObserver.isVisible ? 'visible' : ''}`}
+            className={`text-center mb-10 animate-fade-up ${whyObserver.isVisible ? 'visible' : ''}`}
           >
             <h2 className="text-4xl md:text-5xl font-display font-light text-neutral-900 mb-4">
               Why Choose ProFlow
             </h2>
-            <div className="h-px w-32 bg-blue-700 mx-auto my-8"></div>
+            <div className="h-px w-32 bg-blue-700 mx-auto my-6"></div>
             <p className="text-xl text-neutral-600 font-light max-w-2xl mx-auto">
               Professional service you can count on, every time
             </p>
@@ -231,6 +251,24 @@ export default function Home() {
                 </div>
               )
             })}
+          </div>
+
+          {/* Trust Credentials */}
+          <div className="mt-12 bg-neutral-900 rounded-lg py-6 px-4 md:px-8">
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 md:gap-x-12">
+              {[
+                'BBB A+ Rated',
+                'Angi Super Service',
+                'Google Guaranteed',
+                'HomeAdvisor Top Rated',
+                'EPA Certified',
+              ].map((badge) => (
+                <div key={badge} className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-accent-blue shrink-0" />
+                  <span className="text-sm text-white/80 font-medium whitespace-nowrap">{badge}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -312,8 +350,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center">
                 <div className="text-center p-8">
                   <Wrench className="w-12 h-12 text-blue-400/30 mx-auto mb-4" />
-                  <p className="text-neutral-500 text-sm uppercase tracking-wider">Workshop / Team Image</p>
-                  <p className="text-neutral-600 text-xs mt-2">Replace with your team photo</p>
+                  <p className="text-neutral-500 text-sm uppercase tracking-wider">Our Denver Workshop</p>
+                  <p className="text-neutral-600 text-xs mt-2">ProFlow Mechanical Service Center</p>
                 </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/60 to-transparent"></div>
@@ -325,9 +363,9 @@ export default function Home() {
               </h2>
               <div className="h-px w-24 bg-orange-500 mb-8"></div>
               <p className="text-xl text-neutral-300 font-light mb-12 leading-relaxed">
-                For over 15 years, ProFlow Mechanical has been the name homeowners and businesses
-                trust for heating, cooling, and plumbing. We treat every job like it&#39;s in our own
-                home — because your comfort and safety are never negotiable.
+                For over 15 years, ProFlow Mechanical has been the name Denver homeowners and businesses
+                trust for heating, cooling, and plumbing. From LoDo to Lakewood, we treat every job
+                like it&#39;s in our own home — because your comfort and safety are never negotiable.
               </p>
 
               <div className="space-y-6 mb-12">
@@ -387,8 +425,8 @@ export default function Home() {
 
             <div className="flex items-center justify-center gap-4 text-neutral-400">
               <span className="text-sm uppercase tracking-wider">or call directly</span>
-              <a href="tel:+15551234567" className="text-orange-400 text-xl font-light hover:text-white transition-colors">
-                (555) 123-4567
+              <a href="tel:+17205550147" className="text-orange-400 text-xl font-light hover:text-white transition-colors">
+                (720) 555-0147
               </a>
             </div>
 
