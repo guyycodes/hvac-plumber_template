@@ -148,17 +148,17 @@ export default function Home() {
               Reliable service from Colorado-licensed professionals who stand behind every job.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-start mb-14">
-              <BookingWidget id="hero-booking-widget" />
-              <div className="text-center">
+            <div className="flex flex-col items-center gap-6 mb-14">
+              <div className="flex flex-row gap-4 justify-center">
+                <BookingWidget id="hero-booking-widget" />
                 <EstimateWidget id="hero-estimate-widget" />
-                <p className="text-white/40 text-xs mt-2 tracking-wider uppercase">Free Estimate</p>
               </div>
               <Link
                 to="/services"
-                className="px-10 py-4 border border-white/30 text-white font-medium tracking-wider uppercase text-sm hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-white/25 rounded-full text-white/60 text-sm uppercase tracking-[0.2em] hover:text-white hover:border-white/50 transition-all group"
               >
-                Our Services
+                View Our Services
+                <ArrowRight className="w-4 h-4 animate-nudge-x" />
               </Link>
             </div>
 

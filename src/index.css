@@ -149,6 +149,15 @@
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
+  @keyframes nudge-x {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+  }
+
+  .animate-nudge-x {
+    animation: nudge-x 1.5s ease-in-out infinite;
+  }
+
   @keyframes marquee-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
