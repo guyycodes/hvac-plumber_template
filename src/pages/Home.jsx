@@ -347,13 +347,12 @@ export default function Home() {
             className={`grid lg:grid-cols-2 gap-16 items-center animate-fade-up ${aboutObserver.isVisible ? 'visible' : ''}`}
           >
             <div className="relative h-[600px] order-2 lg:order-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Wrench className="w-12 h-12 text-blue-400/30 mx-auto mb-4" />
-                  <p className="text-neutral-500 text-sm uppercase tracking-wider">Our Denver Workshop</p>
-                  <p className="text-neutral-600 text-xs mt-2">ProFlow Mechanical Service Center</p>
-                </div>
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80"
+                alt="ProFlow Mechanical service technician at work"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
               <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/60 to-transparent"></div>
             </div>
 

@@ -106,12 +106,13 @@ export default function About() {
             {/* Image placeholder */}
             <div className="relative">
               <div className="absolute -inset-4 border border-accent-blue/20" />
-              <div className="relative bg-gradient-to-br from-neutral-100 to-neutral-200 aspect-[4/5] flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Users className="w-16 h-16 text-accent-blue/30 mx-auto mb-4" />
-                  <p className="text-neutral-500 text-sm uppercase tracking-wider">Our Denver Team</p>
-                  <p className="text-neutral-400 text-xs mt-2">ProFlow Mechanical — Est. 2009</p>
-                </div>
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=80"
+                  alt="ProFlow Mechanical team at work"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
 
