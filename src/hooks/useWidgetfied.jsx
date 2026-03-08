@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback } from 'react'
 
-const TENANT_ID = 'PROFLOW_MECH_WTBV0'
+const TENANT_ID = 'PRO_FLOW_MECHANICAL_5BXAU'
 const CDN_URL = 'https://cdn.widgetfied.com/portal.js'
 const MAX_RETRIES = 3
 const RETRY_DELAY = 1000
