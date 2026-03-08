@@ -150,6 +150,22 @@ export function JobPortalWidget({ className = '', displayMode = 'button', id = '
   )
 }
 
+export function PaymentWidget({ className = '', displayMode = 'embedded', id = 'payment-widget', ...rest }) {
+  useWidgetInit(id)
+
+  return (
+    <div
+      id={id}
+      data-widget="payment"
+      data-tenant={TENANT_ID}
+      data-container={id}
+      data-display-mode={displayMode}
+      className={className}
+      {...rest}
+    />
+  )
+}
+
 export function DataMinerWidget({ className = '', displayMode = 'button', id = 'lead-miner-widget', ...rest }) {
   useWidgetInit(id)
 

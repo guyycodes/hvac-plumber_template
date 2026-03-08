@@ -4,6 +4,7 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import MobileCTA from './components/MobileCTA.jsx'
+import { PaymentWidget } from './hooks/useWidgetfied.jsx'
 
 const Home = lazy(() => import('./pages/Home.jsx'))
 const About = lazy(() => import('./pages/About.jsx'))
@@ -49,6 +50,7 @@ export default function App() {
       {!isAdminRoute && <Footer />}
       {!isAdminRoute && <MobileCTA />}
       {!isAdminRoute && <div className="h-[72px] lg:hidden" aria-hidden />}
+      <PaymentWidget id="global-payment-widget" className="hidden" />
     </>
   )
 }
