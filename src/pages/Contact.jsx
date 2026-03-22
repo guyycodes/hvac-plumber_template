@@ -76,7 +76,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form + Info */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-white overflow-hidden">
         <div className="container-custom">
           <div
             ref={formObserver.ref}
