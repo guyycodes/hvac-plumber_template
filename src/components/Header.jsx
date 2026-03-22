@@ -32,9 +32,11 @@ export default function Header() {
   }, [location])
 
   return (
-    <>
-      {/* Top Bar */}
-      <div className="bg-accent-blue text-white py-2">
+    <header className="sticky top-0 z-50">
+      {/* Top Bar — collapses on scroll */}
+      <div className={`bg-accent-blue text-white transition-all duration-300 overflow-hidden ${
+        isScrolled ? 'max-h-0 py-0' : 'max-h-20 py-2'
+      }`}>
         <div className="container-custom flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0 text-sm">
           <div className="flex items-center gap-4">
             <a href={CONTACT.phoneHref} className="flex items-center gap-2 hover:text-accent-orange transition-colors">
@@ -55,7 +57,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <nav className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
+      <nav className={`bg-white transition-all duration-300 ${
         isScrolled ? 'shadow-lg' : 'shadow-sm'
       }`}>
         <div className="container-custom">
@@ -144,6 +146,6 @@ export default function Header() {
           </div>
         </div>
       </nav>
-    </>
+    </header>
   )
 }
