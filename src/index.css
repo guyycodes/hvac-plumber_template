@@ -146,6 +146,29 @@
   body.modal-open { overflow: hidden; }
 }
 
+/* Force BookingWidget button to fill mobile CTA grid cell */
+.mobile-cta-booking,
+.mobile-cta-booking button,
+.mobile-cta-booking > div,
+.mobile-cta-booking > div > button {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 52px;
+}
+
+/* Bottom padding so footer content isn't hidden behind sticky mobile CTA */
+@media (max-width: 1023px) {
+  footer {
+    padding-bottom: 64px;
+  }
+}
+
 /* Contain inline widget internals on mobile */
 [data-widget="booking"],
 [data-widget="estimate"] {

@@ -49,7 +49,6 @@ export default function App() {
       </main>
       {!isAdminRoute && <Footer />}
       {!isAdminRoute && <MobileCTA />}
-      {!isAdminRoute && <div className="h-[72px] lg:hidden" aria-hidden />}
       <PaymentWidget id="global-payment-widget" className="hidden" />
     </>
   )
