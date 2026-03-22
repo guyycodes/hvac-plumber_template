@@ -144,7 +144,34 @@
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
   body.modal-open { overflow: hidden; }
+}
 
+/* Contain inline widget internals on mobile */
+[data-widget="booking"],
+[data-widget="estimate"] {
+  max-width: 100% !important;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+[data-widget="booking"] > *,
+[data-widget="booking"] iframe,
+[data-widget="booking"] form,
+[data-widget="booking"] div,
+[data-widget="estimate"] > *,
+[data-widget="estimate"] iframe,
+[data-widget="estimate"] form,
+[data-widget="estimate"] div {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll on the page */
+html, body {
+  overflow-x: hidden;
+}
+
+@layer utilities {
   .safe-area-bottom {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }

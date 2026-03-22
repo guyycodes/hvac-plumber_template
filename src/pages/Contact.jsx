@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import {
   Phone, Mail, MapPin, Clock,
-  Send, ArrowRight, CheckCircle,
-  Facebook, Instagram, Youtube
+  ArrowRight,
+  Facebook, Instagram, Youtube,
+  PhoneCall
 } from 'lucide-react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
-import { JobPortalWidget, EstimateWidget } from '../hooks/useWidgetfied'
+import { BookingWidget, JobPortalWidget, EstimateWidget } from '../hooks/useWidgetfied'
 
 const CONTACT_INFO = [
   {
@@ -42,31 +41,10 @@ const SOCIAL_LINKS = [
 ]
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    preferredDate: '',
-    message: '',
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
   const heroObserver = useIntersectionObserver({ threshold: 0.1 })
   const formObserver = useIntersectionObserver({ threshold: 0.1 })
   const mapObserver = useIntersectionObserver({ threshold: 0.1 })
   const ctaObserver = useIntersectionObserver({ threshold: 0.1 })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // PLACEHOLDER: Connect to your form handler (EmailJS, Netlify Forms, etc.)
-    console.log('Form submitted:', formData)
-    setIsSubmitted(true)
-  }
-
-  const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
 
   return (
     <>
@@ -104,136 +82,41 @@ export default function Contact() {
             ref={formObserver.ref}
             className={`grid lg:grid-cols-5 gap-16 animate-fade-up ${formObserver.isVisible ? 'visible' : ''}`}
           >
-            {/* Form */}
-            <div className="lg:col-span-3">
+            {/* Main Content - Booking Widget */}
+            <div className="lg:col-span-3 min-w-0">
               <h2 className="text-3xl font-display font-light text-neutral-900 mb-2">
-                Request a Service Call
+                Book Your Service
               </h2>
-              <div className="h-px w-16 bg-accent-blue mb-8"></div>
+              <div className="h-px w-16 bg-accent-blue mb-4"></div>
+              <p className="text-neutral-500 mb-8">
+                Use our online booking tool to schedule your HVAC or plumbing service.
+                Pick your service, choose a time, and we'll handle the rest.
+              </p>
 
-              {isSubmitted ? (
-                <div className="p-12 bg-neutral-50 border border-accent-blue/20 text-center">
-                  <CheckCircle className="w-12 h-12 text-accent-blue mx-auto mb-4" />
-                  <h3 className="text-2xl font-display font-light mb-2">Thank You!</h3>
-                  <p className="text-neutral-600 font-light">
-                    We've received your request and will confirm your service call within 24 hours.
-                  </p>
-                  <button
-                    onClick={() => { setIsSubmitted(false); setFormData({ name: '', email: '', phone: '', service: '', preferredDate: '', message: '' }) }}
-                    className="mt-6 text-accent-blue text-sm uppercase tracking-wider hover:text-neutral-900 transition-colors"
-                  >
-                    Submit Another Request
-                  </button>
+              <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-4 sm:p-8 overflow-hidden max-w-full">
+                <BookingWidget id="contact-main-booking-widget" displayMode="inline" className="w-full max-w-full" />
+              </div>
+
+              {/* Call Alternative */}
+              <div className="mt-8 flex items-start gap-4 p-6 bg-neutral-900 text-white rounded-xl">
+                <div className="w-12 h-12 rounded-full bg-accent-blue/20 flex items-center justify-center flex-shrink-0">
+                  <PhoneCall className="w-5 h-5 text-accent-blue" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm uppercase tracking-wider text-neutral-700 mb-2 font-light">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="input-field"
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm uppercase tracking-wider text-neutral-700 mb-2 font-light">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="input-field"
-                        placeholder="your@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm uppercase tracking-wider text-neutral-700 mb-2 font-light">
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="input-field"
-                        placeholder="(720) 000-0000"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm uppercase tracking-wider text-neutral-700 mb-2 font-light">
-                        Service Needed
-                      </label>
-                      <select
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        className="input-field"
-                      >
-                        <option value="">Select a service</option>
-                        <option value="ac-repair">AC Repair</option>
-                        <option value="heating">Heating</option>
-                        <option value="plumbing">Plumbing</option>
-                        <option value="water-heater">Water Heater</option>
-                        <option value="drain-cleaning">Drain Cleaning</option>
-                        <option value="emergency">Emergency</option>
-                        <option value="unsure">Not sure</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm uppercase tracking-wider text-neutral-700 mb-2 font-light">
-                      Preferred Date &amp; Time
-                    </label>
-                    <input
-                      type="text"
-                      name="preferredDate"
-                      value={formData.preferredDate}
-                      onChange={handleChange}
-                      className="input-field"
-                      placeholder="e.g., Next Tuesday morning"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm uppercase tracking-wider text-neutral-700 mb-2 font-light">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={5}
-                      className="input-field resize-none"
-                      placeholder="Describe the issue or service you need..."
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="group relative px-10 py-4 bg-accent-blue text-white font-medium tracking-wider uppercase text-sm overflow-hidden transition-all duration-300"
+                <div>
+                  <h4 className="text-lg font-medium mb-2">Prefer to Call?</h4>
+                  <p className="text-neutral-300 text-sm leading-relaxed mb-3">
+                    Speak directly with our dispatch team for same-day scheduling or emergency service.
+                    We're available Mon–Fri 7AM–6PM, Sat 8AM–2PM.
+                  </p>
+                  <a
+                    href="tel:+17205550147"
+                    className="inline-flex items-center gap-2 text-accent-orange text-sm hover:text-white transition-colors"
                   >
-                    <span className="relative z-10 flex items-center gap-2">
-                      <Send className="w-4 h-4" />
-                      Send Request
-                    </span>
-                    <div className="absolute inset-0 bg-neutral-900 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                  </button>
-                </form>
-              )}
+                    Call (720) 555-0147
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Sidebar */}
@@ -313,7 +196,7 @@ export default function Contact() {
                 <JobPortalWidget
                   id="contact-portal-widget"
                   displayMode="button"
-                  className="w-full"
+                  className="w-full flex justify-center"
                 />
                 <p className="text-neutral-400 text-xs mt-2 tracking-wider uppercase">Appointment Lookup</p>
               </div>
@@ -327,7 +210,7 @@ export default function Contact() {
                 <EstimateWidget
                   id="contact-estimate-widget"
                   displayMode="button"
-                  className="w-full"
+                  className="w-full flex justify-center"
                 />
               </div>
             </div>
