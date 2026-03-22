@@ -5,6 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -164,11 +165,6 @@
 [data-widget="estimate"] div {
   max-width: 100% !important;
   box-sizing: border-box;
-}
-
-/* Prevent horizontal scroll on the page */
-html, body {
-  overflow-x: hidden;
 }
 
 @layer utilities {
